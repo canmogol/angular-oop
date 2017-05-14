@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="AngularApplication">
+<!-- angular application's name is "AngularApplication" -->
+<head>
+	<meta charset="utf-8"/>
+	<title>Angular Application</title>
+
+    <!--                -->
+    <!-- LOAD LIBRARIES -->
+    <!--                -->
+
+	<!-- load javascript libraries from content delivery network(s) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.js"></script>
+
+
+
+
+    <!--                    -->
+    <!-- LOAD APPLICATION   -->
+    <!--                    -->
+
+    <!-- load model classes -->
+    <script src="js/products/ProductModel.js"></script>
+
+    <!-- load factory classes -->
+    <script src="js/products/ProductFactory.js"></script>
+
+    <!-- load service classes -->
+    <script src="js/products/ProductService.js"></script>
+
+    <!-- load controller classes -->
+    <script src="js/welcome/WelcomeController.js"></script>
+    <script src="js/products/ProductController.js"></script>
+    
+    
+    <!-- load application -->
+    <script src="js/AngularApplication.js"></script>
+    
+
+</head>
+
+  <body>
+    <h2>Example Controller</h2>
+    <!-- here the WelcomeController managed content -->
+    <div ng-controller="WelcomeController">
+    	{{ message }}
+    	<br/>
+    	<button ng-click="controller.sayHi()">Say Hi</button>
+    </div>
+    <!-- here the ProductController managed content -->
+    <div ng-controller="ProductController">
+        <button ng-click="controller.loadProducts()">Load Products</button>
+        <br/>
+        <div ng-repeat="product in ViewModel.products">
+          {{ product.name }} : {{ product.price }}
+        </div>
+    </div>
+  </body>
+
+</html>
